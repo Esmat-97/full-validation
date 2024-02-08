@@ -1,0 +1,141 @@
+ <!DOCTYPE>
+<html>
+
+    <body>
+
+            <form action="wel.php"  method="post">
+
+
+
+                <input type="text" name="fname" id="firstName" placeholder="enter your fname">
+                <span id="fn"></span>
+                <br>
+                <br>
+
+                <input type="text" name="lname"  id="lastName" placeholder="enter your lname">
+                <span id="ln"></span>
+
+                <br> 
+                <br> 
+                <input type="text" name="email"  id="email" placeholder="enter your email">
+                <span id="e"></span>
+                <br> 
+                <br> 
+
+                <textarea name="address"  cols="40" rows="5"></textarea>
+
+                <br> 
+                <br> 
+
+                <span> mysql  </span>       <input type="checkbox" name="mysql"">
+                <span> angular </span>         <input type="checkbox" name="angular" >
+                <span>  ionic </span>         <input type="checkbox" name="ionic" >
+                <span> electron   </span>       <input type="checkbox" name="electron" >
+
+                <br> 
+                <br> 
+
+
+<span> male </span> <input type="radio" name="male" > 
+<span> female   </span> <input type="radio" name="female" > 
+                  
+                   
+
+                <br> 
+                <br> 
+
+
+                <input type="password" name="password" id="password" placeholder="enter your password">
+                <span id="up"></span>
+                <br> 
+                <br> 
+
+                <input type="text" name="dep" placeholder="enter your departement">
+
+
+                <br>
+                <br>
+                <input type="submit" name="submit" value="submit">
+               </form>
+
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+               <script>
+            
+$('#firstName').blur(function(){
+if( $('#firstName').val().length==0){
+    $('#fn').html('please enter your first name')
+}
+else{ $('#fn').html('')}
+    });
+
+                                            /*    */
+
+    $('#lastName').blur(function(){
+if( $('#lastName').val().length==0){
+    $('#ln').html('please enter your first name')
+}
+else{ $('#ln').html('')}
+});
+
+
+
+
+                                           /*     */
+                                           
+$('#email').blur(function() {
+    let email = $('#email').val();
+
+    if (email.length == 0) {
+        $('#e').html('Please enter your email');
+    } else {
+        // Regular expression for email validation
+        let mail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email.match(mail)) {
+            $('#e').html('Please enter a valid email address');
+        } else if (email.length !== 10) {
+            $('#e').html('The email must have 10 characters');
+        } else {
+            $('#e').html('');
+        }
+    }
+});
+
+    
+
+
+
+
+                                       /*            */
+
+
+      $('#password').blur(function() {
+    let pass = $('#password').val();
+
+    if (pass.length == 0) {
+        $('#up').html('Please enter your password');
+    } else {
+        let upper = /[A-Z]/; // Regular expression to match uppercase letters
+        let num = /[0-9]/;   // Regular expression to match numbers
+
+        if (!pass.match(upper)) {
+            $('#up').html('The password must contain at least one uppercase letter');
+        } else if (!pass.match(num)) {
+            $('#up').html('The password must contain at least one number');
+        } else {
+            $('#up').html('');
+        }
+    }
+});
+
+
+
+
+
+
+               </script>
+
+                
+</body>
+</html>
+
