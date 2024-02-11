@@ -225,33 +225,7 @@ else{
 
 
 
-                          /*              */
-                          /*              */
-
-
-
-
- $host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "php";
-
-
-$con = mysqli_connect($host, $username, $password, $dbname);
-
-if (!$con) {
-    echo "fail coonection";
-}
-else{
-    echo "connected to data successfully";
-}
-
-echo "<br>";
-echo "<br>";
-echo "<br>";
-
-$result = mysqli_query($con, "INSERT INTO Persons (FirstName, LastName)
-VALUES ('$fname', '$lname')");
+    
 
 }
 
